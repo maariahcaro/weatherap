@@ -1,0 +1,9 @@
+h1 {text-align: left;
+    font-weight: 400;
+}
+.col {text-align: left;
+color:darkslateblue;
+font-size: 12px; }
+::placeholder {color:grey;}
+
+input {margin-bottom: 5px;}
