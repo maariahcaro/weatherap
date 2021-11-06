@@ -12,9 +12,8 @@
 <body>
     <div class="container">
       <div class="weather-app">
-        <div id="temperature"></div>
-        <h6>time</h6>
-        <h5>Taiwan, Taipei</h5>
+        <h6></h6>
+        <h5 id="city"></h5>
         <div class="card" style="width: 18rem;">
                 <img src="partly_cloudy.png" class="card-img-bot" alt="partly_cloudy" width="70">
                 <div class="card-body">
@@ -23,7 +22,7 @@
                 </form>
                   <input type="submit" value="search"/>
                 <div class="row">
-                    <div class="col">Temperature: 26 °C||°F</div>
+                    <div class="col">Temperature: <strong id="temp">26</strong><span class="units"> °C||<a href="#">°F</a></span></div>
                     <div class="col">Precipitation: 82%</div>
                     <div class="col">Wind speed: 31 km/h</div>
                     <small>

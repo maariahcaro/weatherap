@@ -42,16 +42,23 @@ let now = new Date();
       let form = document.querySelector("form");
       form.addEventListener("submit", search);
 
-      let key = "50f08580ddb58d03ac1e0e37f19dd297";
-let url = "https://api.openweathermap.org/data/2.5/weather?q=San Francisco&units=metric";
+      function displayTemperature(response){
+        let temperatureElement = document.querySelector("#temp");
+        let cityElement = document.querySelector("#city");
+        temperatureElement.innerHTML = response.data.main.temp;
+        cityElement.innerHTML = response.data.name;
+      }
+
+      let key ="50f08580ddb58d03ac1e0e37f19dd297";
+let url =`https://api.openweathermap.org/data/2.5/weather?q=San Francisco&appid=${key}&units=metric`;
+
+axios.get(`${url}&appid=${key}`).then(displayTemperature);
 
 function showTemperature(response) {
     console.log(response.data); 
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${response.data.main.temp}°C`;
 }
-
-axios.get(`${url}&appid=${key}`).then(showTemperature);
 
 
 
