@@ -45,8 +45,12 @@ let now = new Date();
       function displayTemperature(response){
         let temperatureElement = document.querySelector("#temp");
         let cityElement = document.querySelector("#city");
+        let humidityElement = document.querySelector("#humidity");
+        let windElement = document.querySelector("#wind")
         temperatureElement.innerHTML = response.data.main.temp;
         cityElement.innerHTML = response.data.name;
+        humidityElement.innerHTML = response.data.main.humidity;
+        windElement.innerHTML = response.data.wind.speed
       }
 
       let key ="50f08580ddb58d03ac1e0e37f19dd297";
