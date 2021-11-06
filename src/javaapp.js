@@ -1,4 +1,7 @@
-let now = new Date();
+function formatDate(timestamp) {
+
+
+let now = new Date(timestamp);
 
       let h6 = document.querySelector("h6");
 
@@ -28,7 +31,7 @@ let now = new Date();
       ];
       let month = months[now.getMonth()];
 
-      h6.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
+      h6.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`; }
 
       function search(event) {
         event.preventDefault(); 
@@ -51,6 +54,9 @@ let now = new Date();
         cityElement.innerHTML = response.data.name;
         humidityElement.innerHTML = response.data.main.humidity;
         windElement.innerHTML = response.data.wind.speed
+
+        let dateElement = document.querySelector("#date");
+        dateElement.innerHTML = formatDate(response.data.dt * 1000);
       }
 
       let key ="50f08580ddb58d03ac1e0e37f19dd297";
