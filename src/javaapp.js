@@ -63,7 +63,7 @@ let now = new Date(timestamp);
       }
 
       let key ="50f08580ddb58d03ac1e0e37f19dd297";
-      let city = "Paris";
+      let city = "Sydney";
 let url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
 
 axios.get(`${url}&appid=${key}`).then(displayTemperature);
