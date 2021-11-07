@@ -59,7 +59,11 @@ let now = new Date(timestamp);
 
         let dateElement = document.querySelector("#date");
         dateElement.innerHTML = formatDate(response.data.dt * 1000);
-        iconElement.setAttribute("src") = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+        iconElement.setAttribute(
+          "src",
+          `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        );
+        iconElement.setAttribute("alt", response.data.weather[0].description);
         descriptionElement.innerHTML = response.data.weather[0].description;
     
       }
@@ -93,3 +97,5 @@ function getCurrentPosition(){
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+search("New York");
