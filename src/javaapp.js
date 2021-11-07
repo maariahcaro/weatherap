@@ -49,7 +49,8 @@ let now = new Date(timestamp);
         let temperatureElement = document.querySelector("#temp");
         let cityElement = document.querySelector("#city");
         let humidityElement = document.querySelector("#humidity");
-        let windElement = document.querySelector("#wind")
+        let windElement = document.querySelector("#wind");
+        let iconElement = document.querySelector("#icon");
         temperatureElement.innerHTML = response.data.main.temp;
         cityElement.innerHTML = response.data.name;
         humidityElement.innerHTML = response.data.main.humidity;
@@ -57,6 +58,8 @@ let now = new Date(timestamp);
 
         let dateElement = document.querySelector("#date");
         dateElement.innerHTML = formatDate(response.data.dt * 1000);
+        iconElement.setAttribute("src") = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+    
       }
 
       let key ="50f08580ddb58d03ac1e0e37f19dd297";
