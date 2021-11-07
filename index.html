@@ -20,16 +20,26 @@
       <div class="weather-app">
         <h6 id="date"></h6>
         <h5 id="city"></h5>
-        <br>Last Updated at <span id="date"></span></span>
+        <ul>
+          <li>Last updated: <span id="date"></span></li>
+          <li id="description"></li>
+        </ul>
         <div class="card" style="width: 18rem;">
                 <img src="partly_cloudy.png" class="card-img-bot" alt="partly_cloudy" 
                 id="icon"
                 width="70">
                 <div class="card-body">
-                  <form>
-                  <input type="text" placeholder="Change city" id="search-text-input"/>
-                </form>
-                  <input type="submit" value="search"/>
+                  <input
+                  type="search"
+                  placeholder="search for a city"
+                  class="search-city"
+                  id="city-input"
+                />
+                <input
+                type="submit"
+                value="search"
+                class="btn btn-primary w-100"
+              />
                 <div class="row">
                     <div class>Temperature: <strong id="temp">26</strong><span class="units"> °C||<a href="#">°F</a></span></div>
                 <li>Humidity: <span id="humidity"></span>%</li>
@@ -42,6 +52,6 @@
             </div>
     </div>
   </div>
-    <script src="src/javaapp.js"></script>
+    <script src="javaapp.js"></script>
 </body>
 </html>
