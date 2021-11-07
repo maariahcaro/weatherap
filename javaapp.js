@@ -55,7 +55,7 @@ let now = new Date(timestamp);
         temperatureElement.innerHTML = response.data.main.temp;
         cityElement.innerHTML = response.data.name;
         humidityElement.innerHTML = response.data.main.humidity;
-        windElement.innerHTML = response.data.wind.speed
+        windElement.innerHTML = response.data.wind.speed;
 
         let dateElement = document.querySelector("#date");
         dateElement.innerHTML = formatDate(response.data.dt * 1000);
