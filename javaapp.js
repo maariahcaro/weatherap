@@ -13,7 +13,6 @@ let now = new Date(timestamp);
       let year = now.getFullYear();
 
       let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      let day = days[now.getDay()];
 
       let months = [
         "Jan",
@@ -31,7 +30,10 @@ let now = new Date(timestamp);
       ];
       let month = months[now.getMonth()];
 
-      h6.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`; }
+      h6.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`; 
+      let day = days[date.getDay()];
+      return `${day} ${hours}:${minutes}`;
+    }
 
       function search(event) {
         event.preventDefault(); 
