@@ -10,13 +10,13 @@ function formatDate(timestamp) {
   }
 
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
@@ -116,4 +116,4 @@ function handleSubmit(event) {
 let form = document.querySelector("#szukaj");
 form.addEventListener("submit", handleSubmit);
 
-search("New York");
+search("Tokyo");
