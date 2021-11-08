@@ -1,38 +1,34 @@
 function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 
-let now = new Date(timestamp);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-      let h6 = document.querySelector("h6");
-
-      let date = now.getDate();
-      let hours = now.getHours();
-      if (hours < 10) {hours = `0${hours}`};
-      let minutes = now.getMinutes();
-      if (minutes < 10) {minutes = `0${minutes}`};
-      let year = now.getFullYear();
-
-      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-      let months = [
-        "Jan",
-        "Feb",
-        "March",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ];
-      let month = months[now.getMonth()];
-
-      h6.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`; 
-      let day = days[date.getDay()];
-      return `${day} ${hours}:${minutes}`;
+  return days[day];
+}
     }
 
       function search(event) {
