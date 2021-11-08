@@ -14,40 +14,48 @@
 
     <link rel="stylesheet" href="css.css" />
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-      <div class="weather-app">
-        <h6 id="date"></h6>
-        <h5 id="city"></h5>
-          <li id="description">Last updated: <span id="date"></span></li>
-        <div class="card" style="width: 18rem;">
-          <form id="search"></form>
-          <img src="" alt="clear" id="icon" />
-                <div class="card-body">
-                  <form id="search">
-                  <input
+        <div class="">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
                   type="search"
                   placeholder="search for a city"
-                  class="search-city"
-                  id="city-input"
+                  class=""
+                  id="city-search"
                 />
+              </div>
+              <div class="col-2">
                 <input
-                type="submit"
-                value="search"
-                class="btn btn-primary w-100"
-              /></form>
-              <div class="row">
-                <div class="col-9">
-                    <li class>Temperature: <strong id="temp">26</strong><span class="units"> °C||<a href="#">°F</a></span></li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
-                </div>
+                  type="submit"
+                  value="Search"
+              />
+              </div>
+            </div>
+          </form>
+          <div class="">
+            <h4 id="city"></h4>
+              <li id="description"></li>
+          </div>
+                <img src="" alt="sunny weather" id="icon"/>
+                  <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
                 </div>
               </div>
             </div>
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
+              </ul>
+            </div>
+          </div>
+          <div class="weather-forecast" id="forecast"></div>
+        </div>
+      </div>
     </div>
-  </div>
     <script src="javaapp.js"></script>
-</body>
+  </body>
 </html>
