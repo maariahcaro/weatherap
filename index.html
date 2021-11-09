@@ -16,15 +16,14 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-        <div class="">
+    <div class="zawartość">
           <form id="szukaj">
             <div class="rzad">
               <div class="col-6">
                 <input
                   type="search"
                   placeholder="search for a city"
-                  class=""
+                  class="kontrola"
                   id="city-search"
                 />
               </div>
@@ -36,27 +35,24 @@
               </div>
             </div>
           </form>
-          <div class="">
             <h4 id="city"></h4>
             <h3 id="date">time</h3>
               <li id="description"></li>
           </div>
                 <img src="" alt="sunny weather" id="icon"/>
-                  <strong id="temperature"></strong
-                  ><span class="units"> °C</span>
+                  <h3 id="temperature"></h3>
+                  <span class="units"> °C</span>
                 </div>
               </div>
             </div>
               <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
+                <li>humidity: <span id="humidity"></span>%</li>
+                <li>wind: <span id="wind"></span> m/h</li>
               </ul>
             </div>
           </div>
           <div class="prognoza-pogody" id="prognoza"></div>
         </div>
-      </div>
-    </div>
     <script src="javaapp.js"></script>
   </body>
 </html>
