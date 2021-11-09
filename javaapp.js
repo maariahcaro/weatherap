@@ -53,8 +53,8 @@ function displayForecast(response) {
     }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  prognozaHTML = prognozaHTML + `</div>`;
+  prognozaElement.innerHTML = prognozaHTML;
 }
 
 function getForecast(coordinates) {
