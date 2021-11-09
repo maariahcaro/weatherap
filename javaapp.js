@@ -27,26 +27,24 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#prognoza");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="rzad">`;
   prognoza.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
-      <div class="col-2">
+      <div class="col-3">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
           src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
+            forecastDay.weather[0].icon}@2x.png"
+          width="52"
         />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+        <div class="wft">
+          <span class="wftm"> ${Math.round(
             forecastDay.temp.max
           )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          <span class="wftm"> ${Math.round(
             forecastDay.temp.min
           )}° </span>
         </div>
@@ -62,7 +60,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
         let key ="50f08580ddb58d03ac1e0e37f19dd297";
       
-let url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
 
 axios.get(url).then(displayForecast);
 }
