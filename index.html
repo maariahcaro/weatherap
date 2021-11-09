@@ -12,47 +12,70 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <link rel="stylesheet" href="css.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <div class="zawartość">
-          <form id="szukaj">
-            <div class="rzad">
-              <div class="col-6">
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
                 <input
                   type="search"
-                  placeholder="search for a city"
-                  class="kontrola"
+                  placeholder="Type a city.."
+                  class="form-control"
                   id="city-input"
+                  autocomplete="off"
                 />
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input
                   type="submit"
                   value="Search"
-              />
+                  class="btn btn-primary w-100"
+                />
               </div>
             </div>
           </form>
-            <h4 id="city"></h4>
-            <h3 id="date">time</h3>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
+            </ul>
           </div>
-                <img src="" alt="sunny weather" id="icon"/>
-                  <h3 id="temperature"></h3>
-                  <span class="units"> °C</span>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
                 </div>
               </div>
             </div>
+            <div class="col-6">
               <ul>
-                <li>humidity: <span id="humidity"></span>%</li>
-                <li>wind: <span id="wind"></span> m/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
               </ul>
             </div>
           </div>
-          <div class="prognoza-pogody" id="prognoza"></div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
-    <script src="javaapp.js"></script>
+        <small>
+          <a
+            href="https://github.com/wecodeschool/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Matt Delac
+        </small>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
   </body>
+</html>
 </html>
