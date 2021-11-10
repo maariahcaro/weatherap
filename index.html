@@ -13,37 +13,34 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="css.css" />
-    <title>Weather App</title>
+    <title>Weather Application</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="weather-app">
-          <form id="search-form" class="mb-3">
+          <form id="szukaj" class="mb-3">
             <div class="row">
               <div class="col-9">
                 <input
                   type="search"
-                  placeholder="Type a city.."
+                  placeholder="search for a city"
                   class="form-control"
                   id="city-input"
-                  autocomplete="off"
                 />
               </div>
               <div class="col-3">
                 <input
                   type="submit"
-                  value="Search"
+                  value="go"
                   class="btn btn-primary w-100"
                 />
               </div>
             </div>
           </form>
           <div class="overview">
-            <h1 id="city"></h1>
+            <h3 id="city"></h3>
             <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
+              <li>as at <span id="date"></span></li>
+              <li id="opis"></li>
             </ul>
           </div>
           <div class="row">
@@ -52,24 +49,19 @@
                 <img src="" alt="Clear" id="icon" class="float-left" />
                 <div class="float-left">
                   <strong id="temperature"></strong
-                  ><span class="units"> °C</span>
+                  ><span class="units"></span>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
                 <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
-          <div class="weather-forecast" id="forecast"></div>
         </div>
-        <small>
-        </small>
       </div>
-    </div>
     <script src="javaapp.js"></script>
   </body>
-</html>
 </html>
