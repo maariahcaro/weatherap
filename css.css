@@ -1,11 +1,23 @@
-
-
-h1 {text-align: left;
-    font-weight: 400;
-}
-.col {text-align: left;
-color:darkslateblue;
-font-size: 12px; }
-::placeholder {color:grey;}
-
-input {margin-bottom: 5px;}
+h6 {
+    text-align: left;
+    color: darkslateblue;
+    font-size: 12px;
+  }
+  ::placeholder {
+    color: grey;
+  }
+  
+  input {
+    margin-bottom: 5px;
+  }
+  button {
+    color: darkslateblue;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  
+  h4 {
+    color: darkslateblue;
+    font-size: 12px;
+  }  
