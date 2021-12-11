@@ -31,6 +31,7 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  celsiusTemperature = response.data.main.temp;
 
   document.querySelector("#opis").innerHTML = response.data.weather[0].main;
   let opisElement = document.querySelector("#opis");
@@ -38,7 +39,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("icon");
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` );
   iconElement.setAttribute("alt" `response.data.weather[0].description`);
-  celsiusTemp = response.data.main.temp;
+
 }
 
 
@@ -67,24 +68,18 @@ function showCurrentLocation(event) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = (celsiusTemp * 9)/5 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = fahrenheitTemp;
-  
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
 }
 
-function displayCelTem(event){
+function displayCelsius(event){
 event.preventDefault();
 let temperatureElement = document.querySelector("#temperature");
 temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
-let celsiusTemp = null
+let celsiusTemp = null;
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
-}
 
 let h6 = document.querySelector("h6");
 let currentTime = new Date();
@@ -97,7 +92,7 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertToCelsius);
+celsiusLink.addEventListener("click", displayCelsius);
 
 let currentloc = document.querySelector("#current");
 currentloc.addEventListener("click", showCurrentLocation);
